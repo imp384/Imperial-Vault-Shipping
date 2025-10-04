@@ -1,0 +1,575 @@
+/* =========================
+   COLOR THEME & BASE
+========================= */
+:root {
+  --primary: #1a73e8;    /* Main blue */
+  --accent:  #f57c00;    /* Accent orange */
+  --light:   #f8f9fa;
+  --dark:    #111;
+  --text:    #333;
+  --max-width: 1100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+/* =========================
+   HEADER & NAVIGATION
+========================= */
+.header {
+  background: var(--dark);
+  color: #fff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.logo img {
+  height: 60px;        /* controls the vertical size */
+  width: auto;         /* keeps original aspect ratio */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.logo span {
+  font-size: 1.6rem;      /* text size */
+  font-weight: bold;
+  color: #ffcc00;         /* gold accent */
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  transition: color 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--primary);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;             /* full screen height */
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;                /* start hidden */
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;                /* only the active slide is visible */
+  z-index: 1;
+}
+
+/* === Services Section with Icons === */
+.services {
+  padding: 80px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+  color: #222;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #ffffff;
+  padding: 40px 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.icon-box {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  background: #0077b6;       /* accent background */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box img {
+  width: 40px;
+  height: 40px;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  color: #0077b6;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   SECTION STYLING
+========================= */
+.section {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.section:nth-of-type(even) {
+  background: var(--light);
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   GRID & CARDS
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.card p {
+  color: #555;
+}
+
+/* =========================
+   FORMS
+========================= */
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button,
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 1rem;
+}
+
+form button:hover,
+.btn:hover {
+  background: var(--accent);
+}
+
+#trackResult,
+#contactResult {
+  margin-top: 1rem;
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 5px;
+  white-space: pre-wrap;
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+  }
+
+  .nav {
+    margin-top: 1rem;
+  }
+
+  .nav a {
+    margin-left: 1rem;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* === Vault Section === */
+.vault {
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+.vault-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vault-text {
+  flex: 1 1 400px;
+}
+
+.vault-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+  font-weight: 700;
+}
+
+.vault-text p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.vault-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #2700b6;   /* accent color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+  font-weight: 600;
+}
+
+.vault-btn:hover {
+  background: #005a8d;
+}
+
+.vault-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.vault-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* === Tracking Hero Banner === */
+.tracking-hero {
+  position: relative;
+  height: 250px;
+  background: url("../images/image1.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.tracking-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6); /* dark overlay */
+}
+
+.tracking-hero .overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.tracking-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.tracking-hero p {
+  font-size: 1rem;
+  color: #ddd;
+}
+.tracking-hero {
+  /* existing code… */
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+/* === Tracking Form Section === */
+.tracking {
+  background: #ffffff;          /* keep the form area pure white */
+  padding: 60px 20px;           /* roomy top/bottom spacing */
+}
+
+.tracking .container {
+  max-width: 700px;             /* center it nicely */
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);  /* subtle card shadow */
+  padding: 40px 30px;
+  border-radius: 8px;
+}
+
+.tracking h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.tracking p {
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+.tracking-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;  /* mobile friendly */
+}
+
+.tracking-form input {
+  flex: 1 1 250px;
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.tracking-form button {
+  background: #c2185b;
+  color: #fff;
+  border: none;
+  padding: 0 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: background 0.3s ease;
+}
+
+.tracking-form button:hover {
+  background: #a0154a;
+}
+
+.tracking-form i {
+  margin-right: 8px;
+}
+
+/* === Contact Hero === */
+.contact-hero {
+  position: relative;
+  height: 250px;
+  background: url("assets/images/contact-bg.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.contact-hero .overlay {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.contact-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-hero p {
+  color: #ddd;
+}
+
+/* === Contact Section === */
+.contact {
+  padding: 60px 20px;
+  background: #f8f9fa;
+}
+
+.contact .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.contact p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.contact-info h3 {
+  margin-top: 0;
+  color: #c2185b;
+  margin-bottom: 5px;
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background: #c2185b;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #a0154a;
+}
+
+@media(max-width:768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  width: 100%;
+  background: #222;   /* footer background color */
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: relative; /* keeps footer after content */
+  left: 0;
+  bottom: 0;
+}
+
+
+
