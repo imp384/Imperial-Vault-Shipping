@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>IMPERIAL VAULT & SHIPPING</title>
-  <link rel="stylesheet" href="assets/style.css" />
-  <script src="\assets\main.js"></script>
+  <link rel="stylesheet" href="assets\style.css" />
+  <script src="assets\main.js"></script>
 </head>
 <body>
 
@@ -18,11 +18,11 @@
 </a>
 <nav class="vertical-nav">
   <a href="index.html">Home</a>
-  <a href="http://localhost/Logistics/vault.php">Vault</a>
-  <a href="http://localhost/Logistics/track.php
+  <a href="vault.php">Vault</a>
+  <a href="track.php
 ">Track</a>
-  <a href="http://localhost/Logistics/contact.php">Contact</a>
-  <a href="http://localhost/Logistics/services.php">Services</a>
+  <a href="contact.php">Contact</a>
+  <a href="services.php">Services</a>
 </nav>
 
 
@@ -34,49 +34,49 @@
   <!-- ======= Hero ======= -->
  <section class="hero-slider">
   <div class="slides">
-    <div class="slide active" style="background-image: url('../images/homepage.jpg');">
+    <div class="slide active" style="background-image: url('images/homepage.jpg');">
       <div class="overlay">
         <h1>Welcome to IMPERIAL VAULT & SHIPPING</h1>
         <p>Your trusted partner in secure vaulting and shipping worldwide.</p>
       </div>
     </div>
 
-    <div class="slide" style="background-image: url('../images/image1.jpg');">
+    <div class="slide" style="background-image: url('images/image1.jpg');">
       <div class="overlay">
         <h1>Secure Vault Storage</h1>
         <p>Safe and monitored vaults for your precious assets.</p>
       </div>
     </div>
 
-    <div class="slide" style="background-image: url('../images/image2.jpg');">
+    <div class="slide" style="background-image: url('images/image2.jpg');">
       <div class="overlay">
         <h1>Global Shipping</h1>
         <p>Fast and reliable international delivery services.</p>
       </div>
     </div>
 
-    <div class="slide" style="background-image: url('../images/image3.jpg');">
+    <div class="slide" style="background-image: url('image3.jpg');">
       <div class="overlay">
         <h1>Real-Time Tracking</h1>
         <p>Track your packages anytime, anywhere.</p>
       </div>
     </div>
 
-    <div class="slide" style="background-image: url('../images/image4.jpg');">
+    <div class="slide" style="background-image: url('images/image4.jpg');">
       <div class="overlay">
         <h1>Worldwide Coverage</h1>
         <p>We deliver to over 200 destinations globally.</p>
       </div>
     </div>
 
-    <div class="slide" style="background-image: url('../images/image5.jpg');">
+    <div class="slide" style="background-image: url('images/image5.jpg');">
       <div class="overlay">
         <h1>Fast Delivery</h1>
         <p>Speed and safety guaranteed every time.</p>
       </div>
     </div>
 
-    <div class="slide" style="background-image: url('../images/image6.jpg');">
+    <div class="slide" style="background-image: url('images/image6.jpg');">
       <div class="overlay">
         <h1>Trusted by Thousands</h1>
         <p>Your valuables are in safe hands with IMPERIAL VAULT & SHIPPING.</p>
@@ -111,7 +111,7 @@
 
     <div class="service-card">
       <div class="icon-box">
-        <img src="../images/image7.jpg" alt="Packaging Icon">
+        <img src="images/image7.jpg" alt="Packaging Icon">
       </div>
       <h3>Packaging Solutions</h3>
       <p>Custom packaging for fragile and high-value items to ensure safe delivery.</p>
@@ -119,7 +119,7 @@
 
     <div class="service-card">
       <div class="icon-box">
-        <img src="../images/image8.jpg" alt="Consultation Icon">
+        <img src="images/image8.jpg" alt="Consultation Icon">
       </div>
       <h3>Expert Consultation</h3>
       <p>Advice on shipping regulations, import/export, and logistics planning.</p>
@@ -142,7 +142,7 @@
       <a href="#contact" class="vault-btn">Get Started</a>
     </div>
     <div class="vault-image">
-      <img src="../images/image3.jpg" alt="Vault Storage">
+      <img src="images/image3.jpg" alt="Vault Storage">
     </div>
   </div>
 </section>
@@ -161,7 +161,7 @@
     <h2>TRACK YOUR SHIPMENT</h2>
     <p>Enter a tracking number to get real-time status updates.</p>
 
-    <form class="tracking-form" action="http://localhost/Logistics/track.php" method="GET">
+    <form class="tracking-form" action="track.php" method="GET">
       <input type="text" name="tracking_number" placeholder="Tracking Number" required>
       <button type="submit">
         <i class="fas fa-truck"></i> Track
@@ -176,7 +176,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | IMP VAULTS & SHIP</title>
+  <title>Contact | IMPERIAL VAULT & SHIPPING</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -222,7 +222,7 @@
 
 
   
-  <script src="C:\xampp1\htdocs\Logistics\assets\main.js"></script>
+  <script src="assets\main.js"></script>
 </body>
 </html>
 
@@ -255,7 +255,7 @@ $(function(){
   // Track shipment
   $('#trackForm').on('submit', function(e){
     e.preventDefault();
-    $.getJSON('api/track.php', $(this).serialize(), function(data){
+    $.getJSON('track.php', $(this).serialize(), function(data){
       $('#trackResult').text(JSON.stringify(data, null, 2));
     });
   });
@@ -263,13 +263,13 @@ $(function(){
   // Contact form
   $('#contactForm').on('submit', function(e){
     e.preventDefault();
-    $.post('api/contact.php', $(this).serialize(), function(data){
+    $.post('contact.php', $(this).serialize(), function(data){
       $('#contactResult').text(data.message || data.error);
     }, 'json');
   });
 });
 </script>
-<script src="C:\xampp1\htdocs\Logistics\assets\main.js"></script>
+<script src="assets\main.js"></script>
 
 <!-- ===== Footer (reuse your footer) ===== -->
   <?php include 'footer.php'; ?>
@@ -283,4 +283,5 @@ $(function(){
 </footer>
 </body>
 </html>
+
 
